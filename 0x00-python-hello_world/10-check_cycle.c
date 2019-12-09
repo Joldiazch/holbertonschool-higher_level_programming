@@ -9,5 +9,14 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp_lie, *tem_tor;
+	listint_t *temp_lie;
+	temp_lie = list->next->next;
+
+	if (temp_lie == list)
+		return (1);
+	else if ( list == NULL || temp_lie == NULL)
+		return (0);
+	else
+		check_cycle(list->next);
+	return(0);
 }
