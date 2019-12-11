@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * check_cycle - prints all elements of a listint_t list
- * @list: pointer to head of list
- * Return: 1 if is a cycle list o 0 in other case.
+ * insert_node - add new node in sorted linked list
+ * @head: pointer to head of list
+ * @number: number for node
+ * Return: point to new node
  */
 listint_t *insert_node(listint_t **head, int number)
 {
@@ -13,8 +14,17 @@ listint_t *insert_node(listint_t **head, int number)
 	new = malloc(sizeof(listint_t));
 	if (!new && !head)
 	{
-		free(new);  
-		return(NULL);
+		free(new);
+		return (NULL);
+	}
+	if (*head == NULL)
+		return (add_nodeint_end(head, number));
+	if ((number < (*head)->n))
+	{
+		new->next = *head;
+		new->n = number;
+		*head = new;
+		return (new);
 	}
 	slow_point = *head;
 	fast_point = (*head)->next;
