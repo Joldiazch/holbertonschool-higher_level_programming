@@ -11,8 +11,13 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *slow_point, *fast_point, *new;
 
 	new = malloc(sizeof(listint_t));
-	if (!head || !*head)
+	if (!new)
 		return(NULL);
+	if (!head)
+	{
+		free(new);
+		return(NULL);
+	}
 	slow_point = *head;
 	fast_point = (*head)->next;
 	while (fast_point)
