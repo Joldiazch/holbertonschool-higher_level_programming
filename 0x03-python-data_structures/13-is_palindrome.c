@@ -46,17 +46,18 @@ int is_palindrome(listint_t **head)
 			tem = tem->next;
 		}
 		cont++;
+		tem = rev;
 		for (i = 1; i <= cont / 2; i++)
 		{
 			if (rev->n != (*head)->n)
 			{
-				free_listint(rev);
+				free_listint(tem);
 				return (0);
 			}
 			rev = rev->next;
 			*head = (*head)->next;
 		}
-		free_listint(rev);
+		free_listint(tem);
 		return (1);
 	}
 	return (0);
