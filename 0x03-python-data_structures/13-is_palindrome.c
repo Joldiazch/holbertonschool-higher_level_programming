@@ -31,6 +31,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 int is_palindrome(listint_t **head)
 {
 	listint_t *rev, *tem;
+	int cont = 0, i;
 
 	if (head)
 	{
@@ -40,10 +41,12 @@ int is_palindrome(listint_t **head)
 		rev = NULL;
 		while (tem)
 		{
+			cont++;
 			add_nodeint(&rev, tem->n);
 			tem = tem->next;
 		}
-		while (rev && *head)
+		cont++;
+		for (i = 1; i<= cont/2; i++)
 		{
 			if (rev->n != (*head)->n)
 				return (0);
