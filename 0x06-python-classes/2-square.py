@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from raise_exception_msg import raise_exception_msg
 class Square:
     """class Square that defines a square by: (based on 0-square.py)
     Attributes:

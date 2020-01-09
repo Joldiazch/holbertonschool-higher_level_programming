@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-from raise_exception_msg import raise_exception_msg
 class Square:
+
+
     def __init__(self, size_of_square = 0):
         if type(size_of_square) is not int:
             raise TypeError('size must be an integer')
