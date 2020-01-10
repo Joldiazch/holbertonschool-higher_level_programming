@@ -50,12 +50,12 @@ class Square:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
             self.__position = value
-        pass
 
     def my_print(self):
         if self.size == 0:
             print()
-        print("\n" * self.position[1], end="")
+	else:
+            print("\n" * self.position[1], end="")
         for i in range(self.size):
             print(" " * self.position[0], end="")
             print("#" * self.size)
