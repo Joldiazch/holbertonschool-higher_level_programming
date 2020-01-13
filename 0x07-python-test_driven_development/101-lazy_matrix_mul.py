@@ -26,7 +26,7 @@ def lazy_matrix_mul(m_a, m_b):
     for lta in m_a:
         if len(lta) != len(m_a[0]):
             raise TypeError(msg9)
-        T = list(map(lambda x: False if type(x) != int and type(x) != float else True, lta))
+        T = map(lambda x: False if type(x) != int and type(x) != float else True, lta)
         if not all(T):
             raise TypeError(msg7)
     for ltb in m_b:
