@@ -44,6 +44,7 @@ def matrix_mul(m_a, m_b):
     for row in m_a:
         new = []
         for col in m_b_t:
-            new.append(sum(list(map(lambda i: row[i]*col[i],range(len(row))))))
+            leng = len(row)
+            new.append(sum(list(map(lambda i: row[i]*col[i], range(leng)))))
         new_matrix.append(new)
     return new_matrix
