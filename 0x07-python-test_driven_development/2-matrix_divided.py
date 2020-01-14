@@ -15,8 +15,12 @@ def matrix_divided(matrix, div):
     if type(matrix) is not list:
         raise TypeError(m3)
     else:
+        if len(matrix) == 0:
+            raise TypeError(m3)
         fun = map(lambda x: True if type(x) is list else False, matrix)
         if all(list(fun)):
+            if not all(map(lambda x: 1 if len(x) != 0 else 0, matrix)):
+                raise TypeError(m3)
             for lista in matrix:
                 if (len(lista) != len(matrix[0])):
                     raise TypeError(m4)

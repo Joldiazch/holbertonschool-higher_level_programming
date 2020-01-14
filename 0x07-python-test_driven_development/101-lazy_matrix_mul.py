@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import numpy as np
 def lazy_matrix_mul(m_a, m_b):
     msg1 = "m_a must be a list"
     msg2 = "m_b must be a list"
@@ -26,7 +27,7 @@ def lazy_matrix_mul(m_a, m_b):
     for lta in m_a:
         if len(lta) != len(m_a[0]):
             raise TypeError(msg9)
-        T = map(lambda x: False if type(x) != int and type(x) != float else True, lta)
+        T = map(lambda x: 0 if type(x) != int and type(x) != float else 1, lta)
         if not all(T):
             raise TypeError(msg7)
     for ltb in m_b:
@@ -37,13 +38,5 @@ def lazy_matrix_mul(m_a, m_b):
             raise TypeError(msg8)
     if (len(m_a[0]) != len(m_b)):
         raise ValueError(msg11)
-    m_b_t = []
-    for i in range(len(m_b[0])):
-        m_b_t.append(list(map(lambda l: l[i], m_b)))
-    new_matrix = []
-    for row in m_a:
-        new = []
-        for col in m_b_t:
-            new.append(sum(list(map(lambda i: row[i]*col[i],range(len(row))))))
-        new_matrix.append(new)
-    return new_matrix
+
+    return np.dot(m_a, m_b)

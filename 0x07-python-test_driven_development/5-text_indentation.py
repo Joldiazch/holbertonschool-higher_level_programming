@@ -2,11 +2,13 @@ def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
     else:
+        text = text.strip()
         indicator = 0
         for char in text:
             if indicator is 1 and char is " ":
                 continue
-            if char is '.' or char is '?' or char is ':':
+
+            if char in '.?:':
                 print(char, end="")
                 print("\n")
                 indicator = 1
