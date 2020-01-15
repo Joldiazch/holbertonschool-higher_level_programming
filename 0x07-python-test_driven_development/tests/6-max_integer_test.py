@@ -5,15 +5,25 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
-    def empty_list(self):
+
+    def test_max(self):
+        self.assertTrue(max_integer([1, 2, 3, 2233]), 2233)
+
+    def test_empty(self):
         self.assertIsNone(max_integer([]))
 
-    def max_num(self):
-        self.assertEqual(max_integer([1, 2, 3, 4, 999e999]), 999e999)
+    def test_max_int(self):
+        self.assertEqual(max_integer([1, 3, 333333333]), 333333333)
 
-    def negativ_number(self):
-        self.assertNotEqual(max_integer[-8, -5, -3, -2, 1], -8)
+    def test_float(self):
+        self.assertNotEqual(max_integer([4.2, 3, 5]), 4.2)
 
-    def type_error(self):
+    def test_error(self):
         with self.assertRaises(TypeError):
-            self.assertRaises(max_integer(5))
+            self.assertRaises(max_integer(10))
+
+    def test_neg(self):
+        self.assertNotEqual(max_integer([2, 3, -5]), -5)
+
+    def test_is_not_max(self):
+        self.assertIsNot(max_integer([1, 4, 5]), 4)

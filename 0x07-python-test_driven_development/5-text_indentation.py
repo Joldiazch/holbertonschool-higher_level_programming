@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
@@ -15,4 +16,5 @@ def text_indentation(text):
             else:
                 print(char, end="")
                 indicator = 0
-        print()
+        if indicator is 0:
+            print()

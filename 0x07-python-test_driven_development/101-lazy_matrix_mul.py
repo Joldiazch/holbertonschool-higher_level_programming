@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import numpy as np
+
+
 def lazy_matrix_mul(m_a, m_b):
     msg1 = "m_a must be a list"
     msg2 = "m_b must be a list"
