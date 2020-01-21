@@ -1,0 +1,49 @@
+====================
+1. My_list module
+====================
+Import module:
+    >>> My_list = __import__('1-my_list').MyList
+
+Function:
+=======.
+Class that inherits from class list, and add the print sorted method
+
+Operations:
+=========
+'object' type must be My_list class:
+    >>> object = My_list()
+    >>> type(object) is My_list
+    True
+
+'object' append should add elements to the My_list class:
+    >>> object.append(-10)
+    >>> print(object)
+    [-10]
+
+'object' appending different types:
+    >>> object.append('a')
+    >>> object.append(576)
+    >>> object.append(6.9)
+    >>> object.append(True)
+    >>> object.append((5, 7))
+    >>> print(object)
+    [-10, 'a', 576, 6.9, True, (5, 7)]
+
+'object' calling print_sorted method:
+    >>> object.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: str() < int()
+
+'numeros' instancing My_list with empty list:
+    >>> numeros = My_list([0, 78, 12, 45])
+    >>> print(numeros)
+    [0, 78, 12, 45]
+
+'numeros' with sorted method:
+    >>> numeros.print_sorted()
+    [0, 12, 45, 78]
+
+'numeros' instancing with None:
+    >>> numeros = My_list([None])
+    >>> print(numeros)
+    [None]
