@@ -65,3 +65,35 @@ class Rectangle(Base):
                 raise ValueError(msg2.format(att))
             if value < 0 and att in ["x", "y"]:
                 raise ValueError(msg3.format(att))
+
+    def area(self):
+        return self.width * self.height
+
+    def display(self):
+        print("\n" * self.y, end="")
+        x_position = " " * self.x
+        row = x_position + ("#" * self.width)
+        rows_less_last = (row + "\n") * (self.height - 1)
+        print(rows_less_last + row)
+
+    def __str__(self):
+        msg1 = "[Rectangle] ({}) {}/{} - {}/{}"
+        return msg1.format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        if len(args) != 0:
+            names = ["id", "width", "height", "x", "y"]
+            idx = 0
+            for value in args:
+                setattr(self, names[idx], value)
+                idx += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        names = ["id", "width", "height", "x", "y"]
+        dictionary = {}
+        for name in names:
+            dictionary[name] = getattr(self, name)
+        return dictionary
