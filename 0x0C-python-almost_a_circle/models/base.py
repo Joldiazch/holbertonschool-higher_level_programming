@@ -44,7 +44,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ create """
-        dummy = cls(10, 10, 2, 4)
+        if cls.__name__ is "Rectangle":
+            dummy = cls(10, 10)
+        else:
+            dummy = cls(10)
         dummy.update(**dictionary)
         return dummy
 
