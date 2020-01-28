@@ -33,7 +33,7 @@ class TestBaseClassCreation(unittest.TestCase):
         self.assertEqual(bo.id, 1)
         bo = Base(None)
         self.assertEqual(bo.id, 2)
-    
+
     def test_id_string(self):
         bo = Base("st")
         self.assertEqual(bo.id, "st")
@@ -101,13 +101,13 @@ class TestBaseClassCreation(unittest.TestCase):
         dictionary = re1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(type(json_dictionary), str)
- 
+
     def test_dictionary_empty(self):
         """Comment"""
         dictionary = []
         json_dictionary = Base.to_json_string(dictionary)
         self.assertEqual(json_dictionary, "[]")
- 
+
         obj = None
         json_dictionary = Base.to_json_string(obj)
         self.assertEqual(json_dictionary, "[]")
