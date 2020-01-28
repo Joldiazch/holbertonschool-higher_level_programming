@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ for work with json files"""
 import json
+import turtle
 
 
 class Base:
@@ -94,3 +95,27 @@ class Base:
             return list_instances
         except:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        t = turtle.Turtle()
+        for rect in list_rectangles:
+            t.hideturtle()
+            t.penup()
+            t.goto(rect.x, rect.y)
+            t.showturtle()
+            t.pendown()
+            for l in [rect.width, rect.height, rect.width, rect.height]:
+                t.forward(l)
+                t.left(90)
+
+        for squ in list_squares:
+            t.hideturtle()
+            t.penup()
+            t.goto(squ.x, squ.y)
+            t.showturtle()
+            t.pendown()
+            for l in range(4):
+                t.forward(squ.size)
+                t.left(90)
+        t.done()
