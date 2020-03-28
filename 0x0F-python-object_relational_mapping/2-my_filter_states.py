@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-""" script that lists all states from the database hbtn_0e_0_usa """
-if __name__ == '__main__':
+import MySQLdb
+from sys import argv
+""" For use argv and For make querys to Mysql from python """
 
-    import MySQLdb
-    """ For make querys to Mysql from python """
-    from sys import argv
-    """ For use argv """
+if __name__ == '__main__':
 
     if len(argv) == 5:
         db = MySQLdb.connect(
