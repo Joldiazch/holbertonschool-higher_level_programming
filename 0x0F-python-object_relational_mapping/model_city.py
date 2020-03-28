@@ -6,6 +6,7 @@ from sys import argv
 from model_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
 
+
 class City(Base):
     """ Class representation for cities table """
 
