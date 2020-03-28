@@ -16,7 +16,7 @@ if __name__ == '__main__':
         cur.execute("""
         SELECT *
         FROM states
-        WHERE name REGEXP BINARY '^(N)'
+        WHERE name LIKE BINARY 'N%'
         ORDER BY id ASC
         """)
         query_rows = cur.fetchall()
