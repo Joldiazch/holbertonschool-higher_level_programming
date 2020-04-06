@@ -1,3 +1,3 @@
 #!/bin/bash
 # script that displays the method
-3-methods.sh
+curl -sI 0.0.0.0:5000/route_4 | grep 'Allow: ' | cut -d " " -f2-
