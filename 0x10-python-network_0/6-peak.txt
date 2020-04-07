@@ -1,0 +1,2 @@
+# complexity of algorithm
+O(n)
