@@ -1,2 +1,1 @@
-# complexity of algorithm
-O(n)
+O(nlog(n))
