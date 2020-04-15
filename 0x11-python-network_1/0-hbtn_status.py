@@ -9,9 +9,9 @@ if __name__ == "__main__":
         html = response.read()
         msg = [
             'Body response:',
-            '   - type: {}'.format(type(html)),
-            '   - content: {}'.format(html),
-            '   - utf8 content: {}'.format(html.decode("utf-8"))
+            '\t- type: {}'.format(type(html)),
+            '\t- content: {}'.format(html),
+            '\t- utf8 content: {}'.format(html.decode("utf-8"))
         ]
         for line in msg:
             print(line)
