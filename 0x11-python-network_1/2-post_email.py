@@ -10,7 +10,7 @@ if __name__ == "__main__":
         values = {
             'email': email
         }
-        data = parse.urlencode(values).encode('ascii')
+        data = parse.urlencode(values).encode('utf-8')
         with request.urlopen(URL, data) as response:
             htmt = response.read()
             print(htmt.decode('utf-8'))
