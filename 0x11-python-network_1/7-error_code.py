@@ -6,7 +6,7 @@ from sys import argv as args
 
 if __name__ == "__main__":
     URL = args[1]
-    r = requests.post(url=URL)
+    r = requests.get(url=URL)
     if r.status_code < 400:
         print(r.text)
     else:
