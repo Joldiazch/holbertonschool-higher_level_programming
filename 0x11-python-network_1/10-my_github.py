@@ -10,8 +10,8 @@ if __name__ == "__main__":
     r = requests.get(url=URL, auth=(DATA['username'], DATA['token']))
     try:
         json_dict = r.json()
-        msg = "No result"
-        if json_dict:
+        msg = None
+        if r.status_code == requests.codes.ok:
             msg = '{}'.format(json_dict['id'])
         print(msg)
     except ValueError:
