@@ -7,7 +7,7 @@ from sys import argv as args
 if __name__ == "__main__":
     URL = args[1]
     r = requests.get(url=URL)
-    if r.status_code < 400:
+    if r.status_code == requests.codes.ok:
         print(r.text)
     else:
         print('Error code: {}'.format(r.status_code))
