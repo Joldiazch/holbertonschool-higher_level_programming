@@ -6,4 +6,4 @@ from sys import argv as args
 
 if __name__ == "__main__":
     r = requests.get(args[1])
-    print(r.headers['x-request-id'])
+    print(r.headers.get('x-request-id'))
