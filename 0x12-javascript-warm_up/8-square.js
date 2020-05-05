@@ -6,7 +6,7 @@ const size = parseInt(myArgs[0], 10);
 
 if (size) {
   for (let i = 0; i < size; i++) {
-    console.log('x'.repeat(size))
+    console.log('X'.repeat(size))
   }
 } else {
   console.log('Missing size')
