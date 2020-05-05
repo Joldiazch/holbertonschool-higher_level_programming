@@ -5,4 +5,4 @@ depending of the number of arguments passed */
 
 const myArgs = process.argv.slice(2);
 
-console.log(myArgs.length ? 'Argument found' : 'No argument');
+console.log(myArgs.length == 1 ? 'Argument found' : 'No argument');
