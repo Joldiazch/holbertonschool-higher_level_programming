@@ -2,7 +2,7 @@
 
 /* script that searches the second
 biggest integer in the list of arguments */
-let myArgs = process.argv.slice(2);
+const myArgs = process.argv.slice(2);
 
 if (myArgs.length > 1) {
   myArgs.sort(function (a, b) {
