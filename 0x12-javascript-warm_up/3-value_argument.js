@@ -5,4 +5,4 @@ the first argument passed to it */
 
 const myArgs = process.argv.slice(2);
 
-console.log(myArgs[0] ? myArgs[0] : 'Argument found');
+console.log(myArgs[0] ? myArgs[0] : 'No argument');
