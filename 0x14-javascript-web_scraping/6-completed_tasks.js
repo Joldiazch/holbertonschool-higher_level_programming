@@ -19,7 +19,7 @@ request(
         if (info[obj.userId]) {
           obj.completed ? info[obj.userId] += 1 : info[obj.userId] += 0;
         } else {
-          obj.completed ? info[obj.userId] = 1 : info[obj.userId] = 0;
+          obj.completed ? info[obj.userId] = 1 : info[obj.userId] = undefined;
         }
       });
       console.log(info);
