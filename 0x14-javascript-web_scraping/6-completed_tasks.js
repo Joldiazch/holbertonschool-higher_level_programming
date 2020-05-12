@@ -18,8 +18,8 @@ request(
       allObjects.forEach(obj => {
         if (info[obj.userId]) {
           obj.completed ? info[obj.userId] += 1 : info[obj.userId] += 0;
-        } else {
-          obj.completed ? info[obj.userId] = 1 : info[obj.userId] = undefined;
+        } else if (obj.completed) {
+          info[obj.userId] = 1;
         }
       });
       console.log(info);
