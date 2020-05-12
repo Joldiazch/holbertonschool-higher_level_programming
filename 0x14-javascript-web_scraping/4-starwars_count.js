@@ -13,16 +13,27 @@ request(
     if (error) {
       console.log(error);
     } else {
-      const movies = JSON.parse(body).results;
-      const filmsWithWedgeAntilles = [];
-      movies.forEach(movie => {
-        const characters = movie.characters;
-        characters.forEach(urlCharacter => {
-          if (urlCharacter === 'https://swapi-api.hbtn.io/api/people/18/') {
-            filmsWithWedgeAntilles.push(movie);
+      request(
+        'https://swapi-api.hbtn.io/api/people/18/',
+        (error, resp, bod) => {
+          if (error) {
+            console.log(error);
+          } else {
+            const films = JSON.parse(bod).films;
+            console.log(films.length);
           }
         });
-      });
-      console.log(filmsWithWedgeAntilles.length);
+      /*  const movies = JSON.parse(body).results;
+       const filmsWithWedgeAntilles = [];
+       movies.forEach(movie => {
+         const characters = movie.characters;
+         characters.forEach(urlCharacter => {
+           console.log(urlCharacter.split('/'))
+           if (urlCharacter === 'https://swapi-api.hbtn.io/api/people/18/') {
+             filmsWithWedgeAntilles.push(movie);
+           }
+         });
+       });
+       console.log(filmsWithWedgeAntilles.length); */
     }
   });
